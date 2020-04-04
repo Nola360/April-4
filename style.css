@@ -48,11 +48,40 @@ h1 {
   font-size: 2rem;
   position: absolute;
   right: 1rem;
+  transition: transform .8s ease-out;
 }
 
 .accordion_item_header.active::after {
   content: '\2212';
+  transform: rotate(180deg);
+}
+
+.accordion_item_body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.9s ease-out;
+
 }
 
 
+.accordion_item_body_content {
+  padding: 1rem;
+  line-height: 1.5rem;
+  border-top: 3px solid #34495e;
+  border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;/*create transparent ends to border-line*/
+}
+
+
+
+/* .accordion_item_header.active + .accordion_item_body {
+  max-height: 200px;
+  
+  
+} */
+
+@media(max-height: 767px) {
+  html {
+    font-size: 14px;
+  }
+}
  
